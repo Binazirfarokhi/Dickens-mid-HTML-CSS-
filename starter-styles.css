@@ -4,6 +4,9 @@ body{
   background-color: black;
   color: white;
   line-height: 1.4;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 6em;
 
 }
 header{
@@ -51,8 +54,8 @@ nav a::before{
   border:5px solid wheat;
  border-radius: 50%;
   position: absolute;
-  inset:-2;
-  z-index: -2;
+  inset:0;
+
 }
 nav li:nth-last-child(1){
   --bc: red;
@@ -79,7 +82,7 @@ border-color: var(--bc);
 /* This makes all the images 600px tall at all times, but with width varying by parent dimension -- without distortion. Parts of the image may be hidden. Object-fit acts like a "window" into the image. */
 img {
   width: 100%;
-  height: auto;
+  height: 600px;
   object-fit: cover;
 }
 /* .visually-hidden{
@@ -91,3 +94,17 @@ img {
   white-space: nowrap; 
   width: 1px;
 } */
+
+/* main layout */
+main{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, mixmax(300px,1fr));
+  counter-reset: myCounter 0;
+
+}
+article{
+  counter-increment: myCounter 1;
+}
+article::before{
+  content: counter(myCounter);
+}
