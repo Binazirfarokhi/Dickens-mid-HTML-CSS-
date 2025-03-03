@@ -108,7 +108,19 @@ main{
 article{
   counter-increment: myCounter 1;
   border:1px solid white;
+  position: relative;
 }
 article::before{
   content: counter(myCounter);
+  position: absolute;
+  top:-12px;
+  font-size: 18px;
+  left:50%;
+  left:calc(50%-20px);
+  border:2px solid white;
+  display: block;
+  border-radius: 50%;
+  background-color: black;
+  text-align: center;
+  width: 40px;
 }
