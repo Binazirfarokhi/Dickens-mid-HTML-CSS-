@@ -77,7 +77,10 @@ border-color: var(--bc);
 
 }
 
-
+ a{
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+ }
 
 /* This makes all the images 600px tall at all times, but with width varying by parent dimension -- without distortion. Parts of the image may be hidden. Object-fit acts like a "window" into the image. */
 img {
@@ -104,6 +107,7 @@ main{
 }
 article{
   counter-increment: myCounter 1;
+  border:1px solid white;
 }
 article::before{
   content: counter(myCounter);
